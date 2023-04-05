@@ -1,0 +1,40 @@
+
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col">
+          <div class="card m-2" >
+            <div class="card-body p-5">
+               <div class="d-flex justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                height="48" 
+                viewBox="0 96 960 960" 
+                width="48">
+                <path d="m434 801 229-229-39-39-190 190-103-103-39 39 142 142ZM220 976q-24 0-42-18t-18-42V236q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm331-554V236H220v680h520V422H551ZM220 236v186-186 680-680Z"/>
+                </svg>
+              <h4 class="d-flex justify-content-center p-2">
+                MyNote
+              </h4>
+               </div>
+               
+                <div>
+                  <label class="fw-bold text-success"> <h5>Welcome</h5> User: {{username}} </label><hr>
+                  <button (click)="logout()" class="btn btn-outline-secondary col-1">Log out</button>
+                </div>
+                <hr>
+                <div [hidden]="noteList.length == 0">
+                  <button class="col-2 btn btn-outline-success d-flex justify-content-center align-items-center" type="button" (click)="isAddViewClicked = !isAddViewClicked">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                      </svg>
+                    <span class="m-1">Add Note</span>
+                    
+                  </button>
+                </div>
+                <app-addnote [toggleAddNoteView]="!isAddViewClicked"></app-addnote>
+                <app-empty [hidden]="isEmptyViewVisible" [hideContent]="noteList.length === 0" (onEmptyAddNoteClicked)="addNoteClickWhenEmpty($event)"></app-empty>
+                <app-notelist [hidden]="noteList.length === 0" [noteList]="noteList" (noteMarkAsComplete)="markAsComplete($event)" (noteDelete)="deleteNote($event)"></app-notelist>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>

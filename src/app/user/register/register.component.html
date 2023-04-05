@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center m-2">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+  height="48" 
+  viewBox="0 96 960 960" 
+  width="48">
+  <path d="m434 801 229-229-39-39-190 190-103-103-39 39 142 142ZM220 976q-24 0-42-18t-18-42V236q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm331-554V236H220v680h520V422H551ZM220 236v186-186 680-680Z"/>
+</svg>
+</div>
+<div class="d-flex flex-column min-vh-100 min-vw-100">
+    <div class="d-flex flex-grow-1 justify-content-center align-items-center">
+       <div class="card border-white mb-6">
+       
+        <div class="card-body">
+            <h5 class="text-black">Register today and start adding notes!
+            </h5>
+        </div>
+        
+        <div class="m-3">
+            <label for="name" class="form-label">Name*</label>
+            <input [(ngModel)]="username" type="email" class="form-control" id="name" placeholder="John Wick" >
+          </div>
+        <div class="m-3">
+            <label for="emailAddress" class="form-label">Email address*</label>
+            <input [(ngModel)]="emailAddress" type="email" class="form-control" id="emailAddress" placeholder="john@kill.com">
+          </div>
+          <div class="m-3">
+            <label for="password" class="form-label">Password*</label>
+            <input [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="***********">
+          </div>
+          <div class="d-grid gap-2 m-3">
+            <button class="btn btn-outline-success" type="button" (click)="registerNewUser()">Sign Up</button>
+            <hr>
+            <label class="d-flex justify-content-center">Have an existing account?</label>
+            <button class="btn btn-outline-secondary" type="button" [routerLink]="'/login'">Login here</button>
+          </div>
+       </div>
+    </div>
+</div>
